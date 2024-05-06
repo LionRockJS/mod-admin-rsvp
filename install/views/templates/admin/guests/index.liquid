@@ -1,0 +1,27 @@
+<div class="container">
+    <h4>Guests</h4>
+    {% render "pagination", maxPage: maxPage, current_url: '/admin/rsvp',  page: page %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>CC</th>
+            <th>Language</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+        </thead>
+        {% for item in items %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{ item.contact | escape }}</td>
+                <td>{{ item.cc | truncate:20 }}</td>
+                <td>{{item.language}}</td>
+                <td>{{item.name}} {{ item.last_name }}</td>
+                <td><a class="btn btn-{% if item.rsvp_code == blank %}primary{% else %}secondary{% endif %}" href="/admin/rsvp/send/{{ item.id }}?cp=/admin/rsvp?page={{ page }}">{% if item.rsvp_code != blank %}Re-{% endif %}Send Email</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% render "pagination", maxPage: maxPage, current_url: '/admin/rsvp',  page: page %}
+</div>
