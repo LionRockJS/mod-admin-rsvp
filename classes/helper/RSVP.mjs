@@ -40,7 +40,7 @@ export default class HelperRSVP {
       instance,
       {
         email: userEmail.replaceAll('.', '<span>.</span>'),
-        salutation: config.edm.salutation.get(language).get(instance.salutation?.toLowerCase()) || "",
+        salutation: config.salutation.get(language).get(instance.salutation?.toLowerCase()) || "",
       });
 
     console.log("bcc:", config.mail.bcc);

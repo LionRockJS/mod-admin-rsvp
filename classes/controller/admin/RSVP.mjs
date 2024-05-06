@@ -42,8 +42,8 @@ export default class ControllerAdminRSVP extends ControllerAdmin {
       Object.assign(it, {
         last_name: info.last_name,
         cc: info.cc,
-        sent: info.sent,
-        rsvp_code: info.rsvp_code
+        rsvp_code: info.rsvp_code,
+        salutation: info.salutation,
       });
     }));
   }
@@ -57,7 +57,7 @@ export default class ControllerAdminRSVP extends ControllerAdmin {
     const instance = await ORM.factory(Lead, id, {database});
 
     const dbInfo = databases.get('guest_info');
-    const info = await ORM.factory('LeadInfo', instance.id, {database: dbInfo});
+    const info = await ORM.factory(LeadInfo, instance.id, {database: dbInfo});
 
     Object.assign(instance, {
       last_name: info.last_name,
