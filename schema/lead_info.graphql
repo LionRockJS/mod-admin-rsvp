@@ -1,0 +1,6 @@
+type LeadInfos{
+    last_name: String
+    cc: String
+    rsvp_code: String
+    salutation : String
+}

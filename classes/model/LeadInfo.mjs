@@ -1,0 +1,16 @@
+import { ORM } from '@lionrockjs/central';
+
+export default class LeadInfo extends ORM{
+  last_name = null;
+  cc = null;
+  rsvp_code = null;
+
+  static joinTablePrefix = 'lead_info';
+  static tableName = 'lead_infos';
+
+  static fields = new Map([
+    ["last_name", "String"],
+    ["cc", "String"],
+    ["rsvp_code", "String"]
+  ]);
+}

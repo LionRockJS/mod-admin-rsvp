@@ -1,0 +1,34 @@
+{
+  "type": "module",
+  "name": "@lionrockjs/mod-admin-rsvp",
+  "version": "0.0.1",
+  "description": "The RSVP module for LionRockJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules ../../../node_modules/jest/bin/jest.js --coverage",
+    "mjml1": "mjml --watch public_source/media/edm/en/rsvp.mjml -o public/media/edm/en/rsvp.html",
+    "mjml2": "mjml --watch public_source/media/edm/zh-hant/rsvp.mjml -o public/media/edm/zh-hant/rsvp.html",
+    "mjml3": "mjml --watch public_source/media/edm/zh-hans/rsvp.mjml -o public/media/edm/zh-hans/rsvp.html",
+    "mjml": "npx concurrently \"npm run mjml1\" \"npm run mjml2\" \"npm run mjml3\""
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {},
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)",
+      "**/?(*.)+(spec|test).mjs"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "mjs"
+    ]
+  },
+  "keywords": [
+    "LionRockJS",
+    "RSVP"
+  ],
+  "author": "Kojin Nakana",
+  "license": "MIT"
+}
