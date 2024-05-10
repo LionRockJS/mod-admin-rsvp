@@ -15,10 +15,10 @@ export default class ControllerAdminRSVP extends ControllerAdmin {
     super(request, Lead, {
       roles: new Set(['staff', 'moderator']),
       databases: new Map([
-        ['guest',      Central.config.site.databaseFolder+'/guest/lead.sqlite'],
-        ['guest_info', Central.config.site.databaseFolder+'/guest/lead_info.sqlite'],
-        ['guest_action', Central.config.site.databaseFolder+'/guest/lead_action.sqlite'],
-        ['mail',       Central.config.site.databaseFolder+'/mail.sqlite']
+        ['guest',      Central.config.rsvp.databasePath+'/guest/lead.sqlite'],
+        ['guest_info', Central.config.rsvp.databasePath+'/guest/lead_info.sqlite'],
+        ['guest_action', Central.config.rsvp.databasePath+'/guest/lead_action.sqlite'],
+        ['mail',       Central.config.mail.databasePath+'/'+ Central.config.mail.database]
       ]),
       templates: new Map([
         ['index', 'templates/admin/guests/index'],
