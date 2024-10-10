@@ -79,4 +79,7 @@ export default class ControllerAdminRSVP extends ControllerAdmin {
     await this.redirect(this.state.get(Controller.STATE_CHECKPOINT) || '/admin/rsvp/');
   }
 
+  async action_read(){
+
+  }
 }
