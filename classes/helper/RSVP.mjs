@@ -1,7 +1,7 @@
 import path from 'node:path';
 import {ORM, Central}  from '@lionrockjs/central';
 import {ORMAdapterSQLite}  from "@lionrockjs/adapter-database-better-sqlite3";
-import {Mail}  from '@lionrockjs/mod-mail';
+import {TemplateMail}  from '@lionrockjs/mod-mail';
 import {MailAdapterAWS}  from '@lionrockjs/adapter-mail-aws';
 
 import {ModelLeadAction} from '@lionrockjs/mod-cold-leads';
@@ -10,7 +10,7 @@ export default class HelperRSVP {
   constructor(leadDB, leadActionDB, mailDB, clientIP, landing) {
     this.leadDB = leadDB;
     this.leadActionDB = leadActionDB;
-    this.helperMail = new Mail({
+    this.helperMail = new TemplateMail({
       database: mailDB,
       ormAdapter : ORMAdapterSQLite,
       adapter : MailAdapterAWS,
