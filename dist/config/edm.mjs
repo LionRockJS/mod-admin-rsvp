@@ -1,11 +1,10 @@
-import { Central } from '@lionrockjs/central';
 function getAdmin() {
     return "admin@example.com";
 }
 function getBCC() {
     return "edm@example.com";
 }
-const templatePath = Central.EXE_PATH + '/../public/media/edm';
+const templatePath = 'public/media/edm';
 export default {
     mail: {
         admin: getAdmin(),
